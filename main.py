@@ -97,6 +97,14 @@ Return list of suggestions.
 - from: str in html
 - to: str to change it with
 
+Possible actions:
+- Link to legal term
+- New page for legal term
+- Link to example page
+- New example
+- Link to existing article
+- New article
+
 Example response:
 {
   "suggestions": [{'action': 'Add internal link', 'reason': "The term 'breach of contract' is mentioned as an example of a cause of action, and a corresponding page on 'breach' exists in the sitemap.", 'from': 'if someone broke a contract with you, your cause of action would be breach of contract.', 'to': 'if someone broke a contract with you, your cause of action would be <a href="https://detangle.ai/legal-terms/breach">breach of contract</a>.'}]
@@ -135,9 +143,9 @@ def suggest_and_prepare_report(page):
       list_of_suggestion = [f"### {suggestion['action']}\n{suggestion['reason']}\nDiff:\n```diff\n-{suggestion['from']}\n+{suggestion['to']}\n```\n" for suggestion in suggestions]
 
       text = f"""
-  ## Page {page}
-  List of suggestions:
-  """ + '\n\n'.join(list_of_suggestion)
+## Page {page}
+List of suggestions:
+""" + '\n\n'.join(list_of_suggestion)
       return text
     except:
         print(suggestions)
