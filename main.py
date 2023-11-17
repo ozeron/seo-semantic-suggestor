@@ -3,6 +3,9 @@ import requests
 import xml.etree.ElementTree as ET
 import argparse
 import os
+from tqdm import tqdm
+import time
+import json
 from dotenv import load_dotenv
 
 from openai import OpenAI
@@ -74,39 +77,34 @@ def command_download(args):
 
 
 SYSTEM_PROMPT = """
-You are helpful SEO assistant.
+You are helpful SEO assistant. Skip filler words, provide actionable advice.
 Rules to suggest internal linking:
-When deciding on adding internal links to blog pages, consider these points:
+Consider this groups of pages:
+- Legal Terms Pages
+- Examples Section
+- Articles
+- Main Pages
+- Other Legal Terms
 
-Relevance: Link to content that's contextually related. This improves user experience and can boost the linked page's relevance for specific keywords.
+Avoid linking page to itself.
 
-Anchor Text: Use descriptive, keyword-rich anchor text, but avoid over-optimization. Keep it natural and varied.
+Write a reason why you think page is good fit, suggest place in text what to change.
+Output schema in JSON format:
+Return list of suggestions.
+- suggestions - root element, a list:
+- action: str what to do
+- reason: str what to do
+- from: str in html
+- to: str to change it with
 
-Link Distribution: Spread links throughout your site to avoid concentrating them in a few pages. This helps distribute PageRank more evenly.
-
-User Journey: Think about the user's path through your site. Link to content that logically follows or provides deeper insights into the topic.
-
-Page Authority: Link from high-authority pages to pages that need a boost. This can help increase their visibility in search engines.
-
-Content Freshness: Update old posts with links to newer, relevant content to keep them fresh and relevant.
-
-Avoid Overlinking: Too many links on a page can be distracting and may dilute PageRank. Focus on adding a few high-quality links.
-
-SEO Goals: Align internal linking with your SEO strategy, whether it's boosting specific pages, enhancing content hubs, or improving site architecture.
-
-Analytics: Use tools like Google Analytics to identify high-traffic pages that can pass valuable link equity to other pages.
-
-Broken Links: Regularly check for and fix broken internal links. They can harm user experience and SEO.
-
-Remember, internal linking is as much about enhancing user experience as it is about SEO. Keep it intuitive and helpful.
+Example response:
+{
+  "suggestions": [{'action': 'Add internal link', 'reason': "The term 'breach of contract' is mentioned as an example of a cause of action, and a corresponding page on 'breach' exists in the sitemap.", 'from': 'if someone broke a contract with you, your cause of action would be breach of contract.', 'to': 'if someone broke a contract with you, your cause of action would be <a href="https://detangle.ai/legal-terms/breach">breach of contract</a>.'}]
+}
 """
 
-def command_suggest(args):
-    if args.page:
-      print(f"Suggesting interlinking for {args.page}")
-
-
-    with open(f'data/{args.page}', 'r') as file:
+def suggest_interlink_for_page(page):
+    with open(f'data/{page}', 'r') as file:
         pagecontent = file.read()
     with open('sitemap.xml', 'r') as file:
         sitemap = file.read()
@@ -117,23 +115,62 @@ def command_suggest(args):
     sitemap:
     {sitemap}
     """
-
+    # print(f"debug model: {content}")
     response = client.chat.completions.create(
       model=MODEL,
-      #response_format={ "type": "json_object" },
+      response_format={ "type": "json_object" },
       messages=[
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": content}
       ]
     )
-    print(response.choices[0].message.content)
+    json_response = response.choices[0].message.content
+    dict_response = json.loads(json_response)
+    return dict_response['suggestions']
 
+def suggest_and_prepare_report(page):
+    try:
+      suggestions = suggest_interlink_for_page(page)
+      # print(suggestions)
+      list_of_suggestion = [f"### {suggestion['action']}\n{suggestion['reason']}\nDiff:\n```diff\n-{suggestion['from']}\n+{suggestion['to']}\n```\n" for suggestion in suggestions]
+
+      text = f"""
+  ## Page {page}
+  List of suggestions:
+  """ + '\n\n'.join(list_of_suggestion)
+      return text
+    except:
+        print(suggestions)
+
+
+def command_suggest(args):
+    if args.page:
+      print(f"Suggesting interlinking for {args.page}")
+
+    text = suggest_and_prepare_report(args.page)
+    data_folder = "out"
+    if not os.path.exists(data_folder):
+        os.makedirs(data_folder)
+    with open(f"out/{args.page}.md", 'w') as file:
+        file.write(text)
+    print(text)
+
+
+def command_suggest_all(args):
+    print("suggesting-all")
+    for file in tqdm(os.listdir('data')):
+        # suggest_interlink_for_page(file)
+        text = suggest_and_prepare_report(file)
+        with open('out/report.md', 'a') as report_file:
+            report_file.write(text + '\n')
 
 def main(args):
     if args.command == 'download':
         command_download(args)
     elif args.command == 'suggest':
         command_suggest(args)
+    elif args.command == 'suggest-all':
+        command_suggest_all(args)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Download a sitemap and scrape pages.')
@@ -144,6 +181,8 @@ if __name__ == "__main__":
 
     suggest_parser = subparsers.add_parser('suggest', help='Suggest interlinking for a page.')
     suggest_parser.add_argument('page', type=str, help='URL of the page to suggest interlinking for')
+
+    suggest_parser = subparsers.add_parser('suggest-all', help='Suggest interlinking for all pages.')
 
     args = parser.parse_args()
     main(args)
