@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "0040-demo-interlinking-tool"
+version = "0.1.0"
+description = ""
+authors = ["Alex Lapchenko <ozeron@me.com>"]
+readme = "README.md"
+packages = [{include = "0040_demo_interlinking_tool"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+openai = "^1.3.2"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+requests = "^2.31.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
