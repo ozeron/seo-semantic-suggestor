@@ -1,5 +1,7 @@
 import asyncio
 import os
+import csv
+import re
 import requests
 import xml.etree.ElementTree as ET
 import argparse
@@ -227,8 +229,11 @@ async def command_suggest_all(args):
         metadata = json.load(file)
 
     files_to_process = [f for f in os.listdir(sitemap_folder) if not f.endswith(('.xml', '.json'))]
+    if args.filter:
+        pattern = re.compile(args.filter)
+        files_to_process = [f for f in files_to_process if pattern.search(f)]
     if args.limit != -1:
-        files_to_process = os.listdir(sitemap_folder)[:args.limit]
+        files_to_process = files_to_process[:args.limit]
     for file in files_to_process:
         task = suggest_and_prepare_report(file, sitemap_folder, metadata)
         tasks.append(task)
@@ -240,7 +245,6 @@ async def command_suggest_all(args):
     with open(os.path.join(sitemap_folder, 'metadata.json'), 'w') as file:
         json.dump(metadata, file, indent=4)
 
-
 async def command_generate(args):
     print("generate")
     hostname = urlparse(args.url).hostname
@@ -250,17 +254,29 @@ async def command_generate(args):
     # Open and parse the metadata JSON file
     with open(os.path.join(sitemap_folder, 'metadata.json'), 'r') as file:
         metadata = json.load(file)
-    text = "# Report \n\n"
-    for page, data in metadata["suggestions"].items():
-        suggestions = [suggestion for suggestion in data['suggestions'] if page not in suggestion['to_url'] and page != '']
-        list_of_suggestion = [f"### {suggestion['action']}\n{suggestion['reason']}\nDiff:\n```diff\n-{suggestion['from']}\n+{suggestion['to']}\n```\n" for suggestion in suggestions]
-        text += f"""
-## Page {page}
-List of suggestions:
-""" + '\n\n'.join(list_of_suggestion)
-    with open(f"out/{hostname}.md", 'w') as report_file:
-        report_file.write(text + '\n')
 
+    # Prepare data for CSV
+    csv_data = []
+    for page, data in metadata["suggestions"].items():
+        suggestions = [suggestion for suggestion in data['suggestions'] if 'to_url' not in suggestion or (page not in suggestion['to_url'] and page != '')]
+        for suggestion in suggestions:
+            csv_row = {
+                'Page': page,
+                'Action': suggestion['action'],
+                'Reason': suggestion['reason'],
+                'From': suggestion['from'],
+                'To': suggestion['to']
+            }
+            csv_data.append(csv_row)
+
+    # Write data to CSV
+    with open(f"out/{hostname}.csv", 'w', newline='') as csvfile:
+        fieldnames = ['Page', 'Action', 'Reason', 'From', 'To']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+        for row in csv_data:
+            writer.writerow(row)
 def init_parser():
     parser = argparse.ArgumentParser(description='Download a sitemap and scrape pages.')
     subparsers = parser.add_subparsers(dest='command')
@@ -273,7 +289,8 @@ def init_parser():
 
     suggest_parser_all = subparsers.add_parser('suggest-all', help='Suggest interlinking for all pages.')
     suggest_parser_all.add_argument('url', type=str, help='hostname for website to process')
-    suggest_parser_all.add_argument('limit', type=int, default=-1, help='limit of pages to process')
+    suggest_parser_all.add_argument('--limit', type=int, default=-1, help='limit of pages to process')
+    suggest_parser_all.add_argument('--filter', type=str, default=None, help='optional filter for pages to process')
 
     generate_parser = subparsers.add_parser('generate', help='Generate json to markdown')
     generate_parser.add_argument('url', type=str, help='hostname for website to process')

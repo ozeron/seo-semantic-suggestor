@@ -23,38 +23,47 @@ Replace `your_openai_api_key` with your actual OpenAI API key.
 This script provides several commands:
 
 - `download`: Downloads a sitemap from a given URL and saves the pages it links to.
-- `suggest`: Suggests interlinking for a specific page.
 - `suggest-all`: Suggests interlinking for all pages.
+- `generate`: Generates a CSV report from the suggestions.
 
 To run the script with Poetry, use the `poetry run` command:
+
+To run it for website you need run commands in following order, to first download, then generate suggestions and then generate csv.
 
 ### Download
 
 To download a sitemap, use the `download` command followed by the URL of the sitemap:
-`poetry run python main.py download https://example.com/sitemap.xml`
+`poetry run python main.py download https://example.com`
 
 This will download the sitemap and save the pages it links to in the `data` directory.
 
-### Suggest
-
-To suggest interlinking for a specific page, use the `suggest` command followed by the name of the page:
-`poetry run python main.py suggest page`
-
-This will output the suggestions to the console and save them in a Markdown file in the `out` directory.
-
 ### Suggest All
 
-To suggest interlinking for all pages, use the `suggest-all` command:
-`poetry run python main.py suggest-all`
+To suggest interlinking for all pages, use the `suggest-all` command followed by the URL of the website:
+`poetry run python main.py suggest-all https://example.com`
 
-This will output the suggestions for each page to the console and append them to a Markdown file in the `out` directory.
+This command also accepts optional arguments:
+
+- `--limit`: Limits the number of pages to process. If not specified, all pages will be processed. For example, to process only the first 10 pages, use: `poetry run python main.py suggest-all https://example.com --limit 10`
+- `--filter`: Filters the pages to process based on a regular expression. Only pages whose names match the regular expression will be processed. For example, to process only pages whose names contain "blog", use: `poetry run python main.py suggest-all https://example.com --filter blog`
+
+This will output the suggestions for each page to the console and save them in a JSON file in the `data` directory.
+
+### Generate
+
+To generate a CSV report from the suggestions, use the `generate` command followed by the URL of the website:
+`poetry run python main.py generate https://example.com`
+
+This will generate a CSV file in the `out` directory.
 
 TODO:
 
-- [ ] rewrite to store intermediate JSON progress and track costs
+- [x] rewrite to store intermediate JSON progress and track costs
 - [x] remove self links
-- [ ] remove dummy diffs
-- [ ] remove linkst to external site
 - [x] support for nested xml sitemaps
+- [x] add filtering
+- [x] upload to CSV
 - [ ] support html cleaning to save on tokens
 - [ ] RAG for sitemap?
+- [ ] remove dummy diffs
+- [ ] remove links to external site
