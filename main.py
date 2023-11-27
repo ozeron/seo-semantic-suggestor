@@ -1,29 +1,32 @@
+import asyncio
 import os
 import requests
 import xml.etree.ElementTree as ET
 import argparse
+from urllib.parse import urlparse
 import os
 from tqdm import tqdm
 import time
 import json
 from dotenv import load_dotenv
 
-from openai import OpenAI
+from openai import AsyncOpenAI
 
 # Load environment variables from .env file
 load_dotenv()
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+client = AsyncOpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 MODEL = "gpt-4-1106-preview"
 
-
+DATA_FOLDER = "data"
 
 # Get the OpenAI key
 
 
 def download_sitemap(url):
     try:
-        response = requests.get(url)
+        sitemap_url = url if url.endswith('/sitemap.xml') else url + '/sitemap.xml'
+        response = requests.get(sitemap_url)
         response.raise_for_status()
         return response.content  # Return the raw byte content
     except requests.RequestException as e:
@@ -51,8 +54,10 @@ def scrape_and_save(url, folder):
     try:
         response = requests.get(url)
         response.raise_for_status()
-        filename = url.split('/')[-1] or "index.html"
+        parsed_url = urlparse(url)
+        filename = '__'.join(filter(None, parsed_url.path.split('/'))) or  "index.html"
         path = os.path.join(folder, filename)
+        print(f"Saved content from {url} in {path}")
         with open(path, 'w', encoding='utf-8') as file:
             file.write(response.text)
     except requests.RequestException as e:
@@ -60,20 +65,21 @@ def scrape_and_save(url, folder):
 
 
 def command_download(args):
+    hostname = urlparse(args.url).hostname
+    sitemap_folder = os.path.join(DATA_FOLDER, hostname)
+    if not os.path.exists(sitemap_folder):
+        os.makedirs(sitemap_folder)
     xml_content = download_sitemap(args.url)
     if xml_content:
-        sitemap_path = 'sitemap.xml'
+        sitemap_path = os.path.join(sitemap_folder, 'sitemap.xml')
         save_sitemap(xml_content, sitemap_path)
         print(f"Sitemap saved as {sitemap_path}")
 
         urls = parse_sitemap(xml_content)
-        data_folder = "data"
-        if not os.path.exists(data_folder):
-            os.makedirs(data_folder)
         print(f"Found urls: {len(urls)}")
         for url in urls:
-            scrape_and_save(url, data_folder)
-            print(f"Saved content from {url}")
+            scrape_and_save(url, sitemap_folder)
+
 
 
 SYSTEM_PROMPT = """
@@ -111,10 +117,10 @@ Example response:
 }
 """
 
-def suggest_interlink_for_page(page):
-    with open(f'data/{page}', 'r') as file:
+async def suggest_interlink_for_page(page, path):
+    with open(f'{path}/{page}', 'r') as file:
         pagecontent = file.read()
-    with open('sitemap.xml', 'r') as file:
+    with open(f'{path}/sitemap.xml', 'r') as file:
         sitemap = file.read()
 
     content = f"""Here is page content and sitemap. Suggest what links I can add.
@@ -124,7 +130,7 @@ def suggest_interlink_for_page(page):
     {sitemap}
     """
     # print(f"debug model: {content}")
-    response = client.chat.completions.create(
+    response = await client.chat.completions.create(
       model=MODEL,
       response_format={ "type": "json_object" },
       messages=[
@@ -136,9 +142,9 @@ def suggest_interlink_for_page(page):
     dict_response = json.loads(json_response)
     return dict_response['suggestions']
 
-def suggest_and_prepare_report(page):
+async def suggest_and_prepare_report(page, path):
     try:
-      suggestions = suggest_interlink_for_page(page)
+      suggestions = await suggest_interlink_for_page(page, path)
       # print(suggestions)
       list_of_suggestion = [f"### {suggestion['action']}\n{suggestion['reason']}\nDiff:\n```diff\n-{suggestion['from']}\n+{suggestion['to']}\n```\n" for suggestion in suggestions]
 
@@ -147,15 +153,16 @@ def suggest_and_prepare_report(page):
 List of suggestions:
 """ + '\n\n'.join(list_of_suggestion)
       return text
-    except:
+    except Exception as e:
+        print(f"Error: {e}")
         print(suggestions)
 
 
-def command_suggest(args):
+async def command_suggest(args):
     if args.page:
       print(f"Suggesting interlinking for {args.page}")
 
-    text = suggest_and_prepare_report(args.page)
+    text = await suggest_and_prepare_report(args.page, '')
     data_folder = "out"
     if not os.path.exists(data_folder):
         os.makedirs(data_folder)
@@ -164,23 +171,20 @@ def command_suggest(args):
     print(text)
 
 
-def command_suggest_all(args):
+async def command_suggest_all(args):
     print("suggesting-all")
-    for file in tqdm(os.listdir('data')):
-        # suggest_interlink_for_page(file)
-        text = suggest_and_prepare_report(file)
-        with open('out/report.md', 'a') as report_file:
+    hostname = urlparse(args.url).hostname
+    sitemap_folder = os.path.join(DATA_FOLDER, hostname)
+    for file in tqdm(os.listdir(sitemap_folder)):
+        if file == "sitemap.xml":
+            continue
+        await suggest_interlink_for_page(file, sitemap_folder)
+        text = await suggest_and_prepare_report(file, sitemap_folder)
+        with open(f"out/{hostname}.md", 'a') as report_file:
             report_file.write(text + '\n')
 
-def main(args):
-    if args.command == 'download':
-        command_download(args)
-    elif args.command == 'suggest':
-        command_suggest(args)
-    elif args.command == 'suggest-all':
-        command_suggest_all(args)
 
-if __name__ == "__main__":
+def init_parser():
     parser = argparse.ArgumentParser(description='Download a sitemap and scrape pages.')
     subparsers = parser.add_subparsers(dest='command')
 
@@ -190,7 +194,20 @@ if __name__ == "__main__":
     suggest_parser = subparsers.add_parser('suggest', help='Suggest interlinking for a page.')
     suggest_parser.add_argument('page', type=str, help='URL of the page to suggest interlinking for')
 
-    suggest_parser = subparsers.add_parser('suggest-all', help='Suggest interlinking for all pages.')
+    suggest_parser_all = subparsers.add_parser('suggest-all', help='Suggest interlinking for all pages.')
+    suggest_parser_all.add_argument('url', type=str, help='hostname for website to process')
+    return parser
 
+
+async def main():
+    parser = init_parser()
     args = parser.parse_args()
-    main(args)
+    if args.command == 'download':
+        command_download(args)
+    elif args.command == 'suggest':
+        command_suggest(args)
+    elif args.command == 'suggest-all':
+        await command_suggest_all(args)
+
+if __name__ == "__main__":
+    asyncio.run(main())
