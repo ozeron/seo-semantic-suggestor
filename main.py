@@ -14,8 +14,6 @@ from openai import AsyncOpenAI, RateLimitError
 
 from aiolimiter import AsyncLimiter
 
-
-
 # Load environment variables from .env file
 load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv('OPENAI_API_KEY'))
@@ -27,12 +25,37 @@ DATA_FOLDER = "data"
 # Get the OpenAI key
 
 
-def download_sitemap(url):
+def download_sitemap(url, sitemap_folder):
+    print(f"donwloading sitemap {url} {sitemap_folder}")
     try:
-        sitemap_url = url if url.endswith('/sitemap.xml') else url + '/sitemap.xml'
-        response = requests.get(sitemap_url)
+        # Construct the sitemap URL
+        sitemap_url = url if url.endswith('.xml') else url + '/sitemap.xml'
+
+        # Define headers for the request
+        headers = {'Accept': 'application/html', 'User-Agent': 'insomnia/8.3.0'}
+
+        # Send a GET request to the sitemap URL
+        response = requests.get(sitemap_url, headers=headers)
         response.raise_for_status()
-        return response.content  # Return the raw byte content
+
+        content = response.content
+        root = ET.fromstring(content)
+
+        # Define the namespace
+        namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+
+        # Check if xml has nested sitemaps
+        sitemaps = [sitemap.find('ns:loc', namespace).text for sitemap in root.findall('ns:sitemap', namespace)]
+        if sitemaps:
+            # If yes, call download_sitemap recursively for each nested sitemap
+            for sitemap in sitemaps:
+                sitemaps = download_sitemap(sitemap, sitemap_folder)
+
+        filename = '__'.join(filter(None, urlparse(sitemap_url).path.split('/'))) or  "sitemap.xml"
+        sitemap_path = os.path.join(sitemap_folder, filename)
+        save_sitemap(content, sitemap_path)
+
+        return content  # Return the raw byte content
     except requests.RequestException as e:
         print(f"Error downloading the sitemap: {e}")
         return None
@@ -56,7 +79,8 @@ def parse_sitemap(xml_content):
 
 def scrape_and_save(url, folder):
     try:
-        response = requests.get(url)
+        headers = {'Accept': 'application/html', 'User-Agent': 'insomnia/8.3.0'}
+        response = requests.get(url, headers=headers)
         response.raise_for_status()
         parsed_url = urlparse(url)
         filename = '__'.join(filter(None, parsed_url.path.split('/'))) or  "index.html"
@@ -73,16 +97,25 @@ def command_download(args):
     sitemap_folder = os.path.join(DATA_FOLDER, hostname)
     if not os.path.exists(sitemap_folder):
         os.makedirs(sitemap_folder)
-    xml_content = download_sitemap(args.url)
-    if xml_content:
-        sitemap_path = os.path.join(sitemap_folder, 'sitemap.xml')
-        save_sitemap(xml_content, sitemap_path)
-        print(f"Sitemap saved as {sitemap_path}")
+    download_sitemap(args.url, sitemap_folder)
 
+    metadata = {}
+    metadata['hostname'] = hostname
+    metadata['urls'] = []
+    xml_files = [f for f in os.listdir(sitemap_folder) if f.endswith(".xml")]
+    for file in xml_files:
+        with open(os.path.join(sitemap_folder, file), "r") as f:
+            xml_content = f.read()
         urls = parse_sitemap(xml_content)
         print(f"Found urls: {len(urls)}")
-        for url in urls:
-            scrape_and_save(url, sitemap_folder)
+        metadata['urls'].extend(urls)
+
+    # save metadata json to sitemap_folder
+    with open(os.path.join(sitemap_folder, 'metadata.json'), 'w') as json_file:
+        json.dump(metadata, json_file)
+
+    for url in metadata['urls']:
+        scrape_and_save(url, sitemap_folder)
 
 
 
@@ -106,14 +139,12 @@ Return list of suggestions.
 - reason: str what to do
 - from: str in html
 - to: str to change it with
+- to_url: url to add link to
 
 Possible actions:
-- Link to legal term
-- New page for legal term
-- Link to example page
-- New example
-- Link to existing article
-- New article
+- Link to existing page - put it, when you have found a good candidate for existing page
+- Content idea - use it when you have found an idea for new page, or it would be goot to add new page
+- Other - user it, if you have other idea how to improve internal linking
 
 Example response:
 {
@@ -124,7 +155,7 @@ Example response:
 async def suggest_interlink_for_page(page, path):
     with open(f'{path}/{page}', 'r') as file:
         pagecontent = file.read()
-    with open(f'{path}/sitemap.xml', 'r') as file:
+    with open(f'{path}/metadata.json', 'r') as file:
         sitemap = file.read()
 
     content = f"""Here is page content and sitemap. Suggest what links I can add.
@@ -144,38 +175,45 @@ async def suggest_interlink_for_page(page, path):
     )
     json_response = response.choices[0].message.content
     dict_response = json.loads(json_response)
-    return dict_response['suggestions']
+    return {
+        "suggestions": dict_response['suggestions'],
+        "usage": response.usage.model_dump()
+    }
+    # dict_response = json.loads(json_response)
+    # return dict_response['suggestions']
 
 async def suggest_and_prepare_report(page, path, hostname):
     try:
         async with limiter:
             suggestions = await suggest_interlink_for_page(page, path)
             # print(suggestions)
-            list_of_suggestion = [f"### {suggestion['action']}\n{suggestion['reason']}\nDiff:\n```diff\n-{suggestion['from']}\n+{suggestion['to']}\n```\n" for suggestion in suggestions]
+#             list_of_suggestion = [f"### {suggestion['action']}\n{suggestion['reason']}\nDiff:\n```diff\n-{suggestion['from']}\n+{suggestion['to']}\n```\n" for suggestion in suggestions]
 
-            text = f"""
-## Page {page}
-List of suggestions:
-        """ + '\n\n'.join(list_of_suggestion)
-            with open(f"out/{hostname}.md", 'a') as report_file:
-                report_file.write(text + '\n')
-            return text
+#             text = f"""
+# ## Page {page}
+# List of suggestions:
+#         """ + '\n\n'.join(list_of_suggestion)
+#             with open(f"out/{hostname}.md", 'a') as report_file:
+#                 report_file.write(text + '\n')
+#             return text
+        return (page, suggestions)
     except Exception as e:
         print(f"Error: {e}")
         print(suggestions)
 
 
 async def command_suggest(args):
-    if args.page:
-      print(f"Suggesting interlinking for {args.page}")
+    print("suggesting")
+    # if args.page:
+    #   print(f"Suggesting interlinking for {args.page}")
 
-    text = await suggest_and_prepare_report(args.page, '', '')
-    data_folder = "out"
-    if not os.path.exists(data_folder):
-        os.makedirs(data_folder)
-    with open(f"out/{args.page}.md", 'w') as file:
-        file.write(text)
-    print(text)
+    # text = await suggest_and_prepare_report(args.page, '', '')
+    # data_folder = "out"
+    # if not os.path.exists(data_folder):
+    #     os.makedirs(data_folder)
+    # with open(f"out/{args.page}.md", 'w') as file:
+    #     file.write(text)
+    # print(text)
 
 
 async def command_suggest_all(args):
@@ -183,16 +221,45 @@ async def command_suggest_all(args):
     hostname = urlparse(args.url).hostname
     sitemap_folder = os.path.join(DATA_FOLDER, hostname)
     tasks = []
-    for file in os.listdir(sitemap_folder):
-        if file == "sitemap.xml":
-            continue
-        # await suggest_interlink_for_page(file, sitemap_folder)
-        task = suggest_and_prepare_report(file, sitemap_folder, hostname)
+
+    # Open and parse the metadata JSON file
+    with open(os.path.join(sitemap_folder, 'metadata.json'), 'r') as file:
+        metadata = json.load(file)
+
+    files_to_process = [f for f in os.listdir(sitemap_folder) if not f.endswith(('.xml', '.json'))]
+    if args.limit != -1:
+        files_to_process = os.listdir(sitemap_folder)[:args.limit]
+    for file in files_to_process:
+        task = suggest_and_prepare_report(file, sitemap_folder, metadata)
         tasks.append(task)
     for future in async_tqdm(asyncio.as_completed(tasks), total=len(tasks)):
-        result = await future
+        (url, suggestion) = await future
+        metadata['suggestions'][url] = suggestion
+
+    # write metadata.json with pretty print
+    with open(os.path.join(sitemap_folder, 'metadata.json'), 'w') as file:
+        json.dump(metadata, file, indent=4)
 
 
+async def command_generate(args):
+    print("generate")
+    hostname = urlparse(args.url).hostname
+    sitemap_folder = os.path.join(DATA_FOLDER, hostname)
+    tasks = []
+
+    # Open and parse the metadata JSON file
+    with open(os.path.join(sitemap_folder, 'metadata.json'), 'r') as file:
+        metadata = json.load(file)
+    text = "# Report \n\n"
+    for page, data in metadata["suggestions"].items():
+        suggestions = [suggestion for suggestion in data['suggestions'] if page not in suggestion['to_url'] and page != '']
+        list_of_suggestion = [f"### {suggestion['action']}\n{suggestion['reason']}\nDiff:\n```diff\n-{suggestion['from']}\n+{suggestion['to']}\n```\n" for suggestion in suggestions]
+        text += f"""
+## Page {page}
+List of suggestions:
+""" + '\n\n'.join(list_of_suggestion)
+    with open(f"out/{hostname}.md", 'w') as report_file:
+        report_file.write(text + '\n')
 
 def init_parser():
     parser = argparse.ArgumentParser(description='Download a sitemap and scrape pages.')
@@ -206,6 +273,10 @@ def init_parser():
 
     suggest_parser_all = subparsers.add_parser('suggest-all', help='Suggest interlinking for all pages.')
     suggest_parser_all.add_argument('url', type=str, help='hostname for website to process')
+    suggest_parser_all.add_argument('limit', type=int, default=-1, help='limit of pages to process')
+
+    generate_parser = subparsers.add_parser('generate', help='Generate json to markdown')
+    generate_parser.add_argument('url', type=str, help='hostname for website to process')
     return parser
 
 
@@ -218,6 +289,8 @@ async def main():
         command_suggest(args)
     elif args.command == 'suggest-all':
         await command_suggest_all(args)
+    elif args.command == 'generate':
+        await command_generate(args)
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -48,3 +48,13 @@ To suggest interlinking for all pages, use the `suggest-all` command:
 `poetry run python main.py suggest-all`
 
 This will output the suggestions for each page to the console and append them to a Markdown file in the `out` directory.
+
+TODO:
+
+- [ ] rewrite to store intermediate JSON progress and track costs
+- [x] remove self links
+- [ ] remove dummy diffs
+- [ ] remove linkst to external site
+- [x] support for nested xml sitemaps
+- [ ] support html cleaning to save on tokens
+- [ ] RAG for sitemap?

@@ -1,0 +1,562 @@
+    INFO: 2023-11-27 14:16:35,653:               log.py:   20: Logging to /Users/ozeron/code/0040-demo-interlinking-tool/mdpdf.log
+   DEBUG: 2023-11-27 14:16:35,653:               cli.py:  103: out/sullivandermatology.com.md
+    INFO: 2023-11-27 14:16:35,653:         converter.py:   14: out/sullivandermatology.com.md
+   DEBUG: 2023-11-27 14:16:35,667:      pdf_renderer.py:  470: printSegment: Report
+   DEBUG: 2023-11-27 14:16:35,670:      pdf_renderer.py:  470: printSegment: Page category
+   DEBUG: 2023-11-27 14:16:35,670:      pdf_renderer.py:  470: printSegment: __
+   DEBUG: 2023-11-27 14:16:35,671:      pdf_renderer.py:  470: printSegment: nails
+   DEBUG: 2023-11-27 14:16:35,672:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,673:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,674:      pdf_renderer.py:  470: printSegment: The article 
+   DEBUG: 2023-11-27 14:16:35,675:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,675:      pdf_renderer.py:  470: printSegment: The Truth About Gel Nails: Is the UV Lamp Safe?
+   DEBUG: 2023-11-27 14:16:35,676:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,676:      pdf_renderer.py:  470: printSegment:  explores the safety concerns around UV lamps used
+   DEBUG: 2023-11-27 14:16:35,677:      pdf_renderer.py:  470: printSegment: for gel nails, which falls under the broader category of nail care.
+   DEBUG: 2023-11-27 14:16:35,677:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,678:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,679:      pdf_renderer.py:  470: printSegment: -Ah, gel nails. Remember when our biggest concerns revolved around
+   DEBUG: 2023-11-27 14:16:35,680:      pdf_renderer.py:  470: printSegment: chipping a nail before an event?
+   DEBUG: 2023-11-27 14:16:35,680:      pdf_renderer.py:  470: printSegment: +Ah, <a
+   DEBUG: 2023-11-27 14:16:35,681:      pdf_renderer.py:  470: printSegment: href="https://sullivandermatology.com/the-truth-about-gel-nails-is-the-uv-lamp-safe/">gel nails</a>. Remember when our biggest concerns revolved around chipping a nail before an event?
+   DEBUG: 2023-11-27 14:16:35,681:      pdf_renderer.py:  470: printSegment: Page silhouette-thread-lift
+   DEBUG: 2023-11-27 14:16:35,682:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,682:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,682:      pdf_renderer.py:  470: printSegment: The page discusses the anti-aging benefits of the Silhouette InstaLift procedure, and additional information on
+   DEBUG: 2023-11-27 14:16:35,682:      pdf_renderer.py:  470: printSegment: anti-aging treatments can be found in the article 
+   DEBUG: 2023-11-27 14:16:35,683:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,683:      pdf_renderer.py:  470: printSegment: The Eye-Catching Truth: Your New Must-Have Eye Cream.
+   DEBUG: 2023-11-27 14:16:35,684:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,685:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,686:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,687:      pdf_renderer.py:  470: printSegment: -Silhouette Instalift thread lifts offer a non-surgical solution to
+   DEBUG: 2023-11-27 14:16:35,687:      pdf_renderer.py:  470: printSegment: lift sagging skin.
+   DEBUG: 2023-11-27 14:16:35,688:      pdf_renderer.py:  470: printSegment: +Silhouette Instalift thread lifts offer a non-surgical solution to
+   DEBUG: 2023-11-27 14:16:35,688:      pdf_renderer.py:  470: printSegment: lift <a
+   DEBUG: 2023-11-27 14:16:35,689:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/the-eye-catching-truth-your-new-must-have-eye-cream/'>sagging skin</a>.
+   DEBUG: 2023-11-27 14:16:35,690:      pdf_renderer.py:  470: printSegment: Page pay-bill
+   DEBUG: 2023-11-27 14:16:35,690:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,691:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,691:      pdf_renderer.py:  470: printSegment: There
+   DEBUG: 2023-11-27 14:16:35,692:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,692:      pdf_renderer.py:  470: printSegment: s a specific mention of dermatitis as one of the causes for armpit rashes, and the site has a dedicated page on
+   DEBUG: 2023-11-27 14:16:35,693:      pdf_renderer.py:  470: printSegment: the topic which can provide the reader with more details.
+   DEBUG: 2023-11-27 14:16:35,693:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,694:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,694:      pdf_renderer.py:  470: printSegment: -Broadly speaking, dermatitis is skin irritation.
+   DEBUG: 2023-11-27 14:16:35,694:      pdf_renderer.py:  470: printSegment: +Broadly speaking, <a
+   DEBUG: 2023-11-27 14:16:35,695:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/dermatitis/'>dermatitis</a>
+   DEBUG: 2023-11-27 14:16:35,695:      pdf_renderer.py:  470: printSegment: is skin irritation.
+   DEBUG: 2023-11-27 14:16:35,696:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,697:      pdf_renderer.py:  470: printSegment: The term 
+   DEBUG: 2023-11-27 14:16:35,697:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,697:      pdf_renderer.py:  470: printSegment: atopic
+   DEBUG: 2023-11-27 14:16:35,698:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,698:      pdf_renderer.py:  470: printSegment:  is used, and there is a term-specific page that provides additional reading material for interested
+   DEBUG: 2023-11-27 14:16:35,699:      pdf_renderer.py:  470: printSegment: readers.
+   DEBUG: 2023-11-27 14:16:35,700:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,700:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,701:      pdf_renderer.py:  470: printSegment: -in the context of armpits, atopic and seborrheic dermatitis are
+   DEBUG: 2023-11-27 14:16:35,701:      pdf_renderer.py:  470: printSegment: relatively rare.
+   DEBUG: 2023-11-27 14:16:35,702:      pdf_renderer.py:  470: printSegment: +in the context of armpits, <a
+   DEBUG: 2023-11-27 14:16:35,702:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/atopic-dermatitis-eczema/'>atopic</a> and seborrheic dermatitis are relatively rare.
+   DEBUG: 2023-11-27 14:16:35,703:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,703:      pdf_renderer.py:  470: printSegment: Ringworm is mentioned as a cause of armpit rash and there is an article that explains more about fungal infections
+   DEBUG: 2023-11-27 14:16:35,704:      pdf_renderer.py:  470: printSegment: which includes ringworm.
+   DEBUG: 2023-11-27 14:16:35,704:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,705:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,705:      pdf_renderer.py:  470: printSegment: -it's a fungal infection, notorious for its distinctive ring-like
+   DEBUG: 2023-11-27 14:16:35,706:      pdf_renderer.py:  470: printSegment: appearance.
+   DEBUG: 2023-11-27 14:16:35,706:      pdf_renderer.py:  470: printSegment: +it's a <a
+   DEBUG: 2023-11-27 14:16:35,706:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/fungal-infections/'>fungal
+   DEBUG: 2023-11-27 14:16:35,707:      pdf_renderer.py:  470: printSegment: infection</a>, notorious for its distinctive ring-like appearance.
+   DEBUG: 2023-11-27 14:16:35,707:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,708:      pdf_renderer.py:  470: printSegment: The term 
+   DEBUG: 2023-11-27 14:16:35,708:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,709:      pdf_renderer.py:  470: printSegment: Hidradenitis supertiva
+   DEBUG: 2023-11-27 14:16:35,709:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,709:      pdf_renderer.py:  470: printSegment:  is referenced, and a corresponding dedicated page is available for more
+   DEBUG: 2023-11-27 14:16:35,709:      pdf_renderer.py:  470: printSegment: information.
+   DEBUG: 2023-11-27 14:16:35,710:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,710:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,710:      pdf_renderer.py:  470: printSegment: -Also called Hidradenitis supertiva
+   DEBUG: 2023-11-27 14:16:35,711:      pdf_renderer.py:  470: printSegment: +Also called <a
+   DEBUG: 2023-11-27 14:16:35,711:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/hidradenitis-suppurativa/'>Hidradenitis supertiva</a>
+   DEBUG: 2023-11-27 14:16:35,712:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,713:      pdf_renderer.py:  470: printSegment: Psoriasis is mentioned as a cause for armpit rashes, and there exists a relevant page that can provide readers with
+   DEBUG: 2023-11-27 14:16:35,713:      pdf_renderer.py:  470: printSegment: additional information on the condition.
+   DEBUG: 2023-11-27 14:16:35,714:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,714:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,715:      pdf_renderer.py:  470: printSegment: -Unlike traditional psoriasis, inverse psoriasis is exclusive to
+   DEBUG: 2023-11-27 14:16:35,715:      pdf_renderer.py:  470: printSegment: skin folds
+   DEBUG: 2023-11-27 14:16:35,715:      pdf_renderer.py:  470: printSegment: +Unlike traditional psoriasis, <a
+   DEBUG: 2023-11-27 14:16:35,716:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/psoriasis/'>inverse
+   DEBUG: 2023-11-27 14:16:35,716:      pdf_renderer.py:  470: printSegment: psoriasis</a> is exclusive to skin folds
+   DEBUG: 2023-11-27 14:16:35,716:      pdf_renderer.py:  470: printSegment: Page molluscum-contagiosum
+   DEBUG: 2023-11-27 14:16:35,716:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,717:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,717:      pdf_renderer.py:  470: printSegment: Mention of dermatomal skin lesions associated with Shingles, a topic covered in the existing article 
+   DEBUG: 2023-11-27 14:16:35,717:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,717:      pdf_renderer.py:  470: printSegment: shingrix-your-shield-against-shingles/
+   DEBUG: 2023-11-27 14:16:35,718:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,718:      pdf_renderer.py:  470: printSegment: .
+   DEBUG: 2023-11-27 14:16:35,718:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,718:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,719:      pdf_renderer.py:  470: printSegment: -In rare cases, the bumps may become infected with bacteria,
+   DEBUG: 2023-11-27 14:16:35,719:      pdf_renderer.py:  470: printSegment: leading to more severe skin infections.
+   DEBUG: 2023-11-27 14:16:35,720:      pdf_renderer.py:  470: printSegment: +In rare cases, the bumps may become infected with bacteria,
+   DEBUG: 2023-11-27 14:16:35,720:      pdf_renderer.py:  470: printSegment: leading to more severe <a
+   DEBUG: 2023-11-27 14:16:35,720:      pdf_renderer.py:  470: printSegment: href="https://sullivandermatology.com/shingrix-your-shield-against-shingles/">skin infections</a>.
+   DEBUG: 2023-11-27 14:16:35,721:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,721:      pdf_renderer.py:  470: printSegment: The topic of preventing infection relates to the information available in the 
+   DEBUG: 2023-11-27 14:16:35,722:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,722:      pdf_renderer.py:  470: printSegment: sunburns-healing-myths-and-more/
+   DEBUG: 2023-11-27 14:16:35,722:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,723:      pdf_renderer.py:  470: printSegment: 
+   DEBUG: 2023-11-27 14:16:35,723:      pdf_renderer.py:  470: printSegment: article, where protection and prevention methods are further discussed.
+   DEBUG: 2023-11-27 14:16:35,723:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,723:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,724:      pdf_renderer.py:  470: printSegment: -While there is no vaccine for the virus, practicing good hygiene
+   DEBUG: 2023-11-27 14:16:35,725:      pdf_renderer.py:  470: printSegment: and avoiding contact with infected individuals can help reduce the
+   DEBUG: 2023-11-27 14:16:35,725:      pdf_renderer.py:  470: printSegment: risk of infection.
+   DEBUG: 2023-11-27 14:16:35,725:      pdf_renderer.py:  470: printSegment: +While there is no vaccine for the virus, practicing good hygiene
+   DEBUG: 2023-11-27 14:16:35,726:      pdf_renderer.py:  470: printSegment: and avoiding contact with infected individuals can help reduce the
+   DEBUG: 2023-11-27 14:16:35,726:      pdf_renderer.py:  470: printSegment: risk of infection. Discover more prevention strategies in our
+   DEBUG: 2023-11-27 14:16:35,726:      pdf_renderer.py:  470: printSegment: article on <a
+   DEBUG: 2023-11-27 14:16:35,727:      pdf_renderer.py:  470: printSegment: href="https://sullivandermatology.com/sunburns-healing-myths-and-more/">Sunburns: Healing Myths and More</a>.
+   DEBUG: 2023-11-27 14:16:35,727:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,728:      pdf_renderer.py:  470: printSegment: The risk of reinfection touches on broader topics of immunity discussed in 
+   DEBUG: 2023-11-27 14:16:35,728:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,728:      pdf_renderer.py:  470: printSegment: nih-vs-niacinamide/
+   DEBUG: 2023-11-27 14:16:35,729:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,729:      pdf_renderer.py:  470: printSegment: , which could offer
+   DEBUG: 2023-11-27 14:16:35,729:      pdf_renderer.py:  470: printSegment: additional context.
+   DEBUG: 2023-11-27 14:16:35,730:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,730:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,730:      pdf_renderer.py:  470: printSegment: -Yes, it is possible to be reinfected with the virus after
+   DEBUG: 2023-11-27 14:16:35,730:      pdf_renderer.py:  470: printSegment: recovering from a previous infection.
+   DEBUG: 2023-11-27 14:16:35,731:      pdf_renderer.py:  470: printSegment: +Yes, it is possible to be reinfected with the virus after
+   DEBUG: 2023-11-27 14:16:35,731:      pdf_renderer.py:  470: printSegment: recovering from a previous infection. Understand more about
+   DEBUG: 2023-11-27 14:16:35,731:      pdf_renderer.py:  470: printSegment: immunity factors in our comprehensive article on <a
+   DEBUG: 2023-11-27 14:16:35,732:      pdf_renderer.py:  470: printSegment: href="https://sullivandermatology.com/nih-vs-niacinamide/">NIH vs
+   DEBUG: 2023-11-27 14:16:35,732:      pdf_renderer.py:  470: printSegment: Niacinamide</a>.
+   DEBUG: 2023-11-27 14:16:35,732:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,732:      pdf_renderer.py:  470: printSegment: Details and evidence of treating molluscum contagiosum can be found on the 
+   DEBUG: 2023-11-27 14:16:35,733:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,733:      pdf_renderer.py:  470: printSegment: medical-treatment-of-alopecia/
+   DEBUG: 2023-11-27 14:16:35,733:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,733:      pdf_renderer.py:  470: printSegment:  page,
+   DEBUG: 2023-11-27 14:16:35,734:      pdf_renderer.py:  470: printSegment: providing a resource for readers seeking medical perspective.
+   DEBUG: 2023-11-27 14:16:35,734:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,734:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,734:      pdf_renderer.py:  470: printSegment: -While some over-the-counter treatments may offer relief from
+   DEBUG: 2023-11-27 14:16:35,735:      pdf_renderer.py:  470: printSegment: symptoms, it is best to consult a healthcare professional for
+   DEBUG: 2023-11-27 14:16:35,735:      pdf_renderer.py:  470: printSegment: proper diagnosis and treatment recommendations.
+   DEBUG: 2023-11-27 14:16:35,735:      pdf_renderer.py:  470: printSegment: +While some over-the-counter treatments may offer relief from
+   DEBUG: 2023-11-27 14:16:35,736:      pdf_renderer.py:  470: printSegment: symptoms, it is best to consult a healthcare professional for
+   DEBUG: 2023-11-27 14:16:35,736:      pdf_renderer.py:  470: printSegment: proper diagnosis and treatment recommendations. Additional medical
+   DEBUG: 2023-11-27 14:16:35,737:      pdf_renderer.py:  470: printSegment: treatment insights can be found in the article on <a
+   DEBUG: 2023-11-27 14:16:35,737:      pdf_renderer.py:  470: printSegment: href="https://sullivandermatology.com/medical-treatment-of-alopecia/">Medical Treatment of Alopecia</a>.
+   DEBUG: 2023-11-27 14:16:35,737:      pdf_renderer.py:  470: printSegment: Page armpit-rashes-10-causes
+   DEBUG: 2023-11-27 14:16:35,738:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,738:      pdf_renderer.py:  470: printSegment: Link to legal term
+   DEBUG: 2023-11-27 14:16:35,738:      pdf_renderer.py:  470: printSegment: Dermatitis is a condition mentioned within the content related to armpit rashes, and a dedicated page that further
+   DEBUG: 2023-11-27 14:16:35,739:      pdf_renderer.py:  470: printSegment: explains this term exists.
+   DEBUG: 2023-11-27 14:16:35,739:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,739:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,739:      pdf_renderer.py:  470: printSegment: -Broadly speaking, dermatitis is skin irritation.
+   DEBUG: 2023-11-27 14:16:35,740:      pdf_renderer.py:  470: printSegment: +Broadly speaking, <a
+   DEBUG: 2023-11-27 14:16:35,740:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/dermatitis/'>dermatitis</a>
+   DEBUG: 2023-11-27 14:16:35,741:      pdf_renderer.py:  470: printSegment: is skin irritation.
+   DEBUG: 2023-11-27 14:16:35,741:      pdf_renderer.py:  470: printSegment: Link to legal term
+   DEBUG: 2023-11-27 14:16:35,742:      pdf_renderer.py:  470: printSegment: Atopic dermatitis is mentioned as a rare type of dermatitis for armpit rashes, and there is a term-specific page
+   DEBUG: 2023-11-27 14:16:35,742:      pdf_renderer.py:  470: printSegment: available.
+   DEBUG: 2023-11-27 14:16:35,743:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,743:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,743:      pdf_renderer.py:  470: printSegment: -atopic and seborrheic dermatitis are relatively rare.
+   DEBUG: 2023-11-27 14:16:35,744:      pdf_renderer.py:  470: printSegment: +<a
+   DEBUG: 2023-11-27 14:16:35,744:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/atopic-dermatitis-eczema/'>atopic</a> and seborrheic dermatitis are relatively rare.
+   DEBUG: 2023-11-27 14:16:35,745:      pdf_renderer.py:  470: printSegment: Link to legal term
+   DEBUG: 2023-11-27 14:16:35,745:      pdf_renderer.py:  470: printSegment: Allergic contact dermatitis is a condition listed as a common cause for armpit rashes, and there
+   DEBUG: 2023-11-27 14:16:35,745:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,745:      pdf_renderer.py:  470: printSegment: s a main page that
+   DEBUG: 2023-11-27 14:16:35,746:      pdf_renderer.py:  470: printSegment: covers various dermatitis types, including contact dermatitis.
+   DEBUG: 2023-11-27 14:16:35,746:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,746:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,746:      pdf_renderer.py:  470: printSegment: -What you might often encounter is allergic contact dermatitis—an
+   DEBUG: 2023-11-27 14:16:35,750:      pdf_renderer.py:  470: printSegment: allergic reaction
+   DEBUG: 2023-11-27 14:16:35,750:      pdf_renderer.py:  470: printSegment: +What you might often encounter is <a
+   DEBUG: 2023-11-27 14:16:35,750:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/dermatitis/'>allergic contact
+   DEBUG: 2023-11-27 14:16:35,751:      pdf_renderer.py:  470: printSegment: dermatitis</a>—an allergic reaction
+   DEBUG: 2023-11-27 14:16:35,751:      pdf_renderer.py:  470: printSegment: Link to legal term
+   DEBUG: 2023-11-27 14:16:35,752:      pdf_renderer.py:  470: printSegment: Fungal infection, specifically ringworm, is described as a cause of armpit rashes and there
+   DEBUG: 2023-11-27 14:16:35,752:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,752:      pdf_renderer.py:  470: printSegment: s an existing page on
+   DEBUG: 2023-11-27 14:16:35,752:      pdf_renderer.py:  470: printSegment: fungal infections.
+   DEBUG: 2023-11-27 14:16:35,753:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,753:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,753:      pdf_renderer.py:  470: printSegment: -Ringworm is a fungal infection, notorious for its distinctive
+   DEBUG: 2023-11-27 14:16:35,753:      pdf_renderer.py:  470: printSegment: ring-like appearance.
+   DEBUG: 2023-11-27 14:16:35,754:      pdf_renderer.py:  470: printSegment: +Ringworm is a <a
+   DEBUG: 2023-11-27 14:16:35,754:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/fungal-infections/'>fungal
+   DEBUG: 2023-11-27 14:16:35,754:      pdf_renderer.py:  470: printSegment: infection</a>, notorious for its distinctive ring-like appearance.
+   DEBUG: 2023-11-27 14:16:35,754:      pdf_renderer.py:  470: printSegment: Link to legal term
+   DEBUG: 2023-11-27 14:16:35,755:      pdf_renderer.py:  470: printSegment: Candida is mentioned as a cause for a specific type of armpit rash and there
+   DEBUG: 2023-11-27 14:16:35,755:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,755:      pdf_renderer.py:  470: printSegment: s a related page on fungal infections that
+   DEBUG: 2023-11-27 14:16:35,755:      pdf_renderer.py:  470: printSegment: includes Candida.
+   DEBUG: 2023-11-27 14:16:35,756:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,756:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,756:      pdf_renderer.py:  470: printSegment: -Candida can cause red rashes accompanied by small red lesions.
+   DEBUG: 2023-11-27 14:16:35,757:      pdf_renderer.py:  470: printSegment: +<a
+   DEBUG: 2023-11-27 14:16:35,757:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/fungal-infections/'>Candida</a> can cause red rashes accompanied by small red lesions.
+   DEBUG: 2023-11-27 14:16:35,757:      pdf_renderer.py:  470: printSegment: Link to legal term
+   DEBUG: 2023-11-27 14:16:35,757:      pdf_renderer.py:  470: printSegment: The term 
+   DEBUG: 2023-11-27 14:16:35,758:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,758:      pdf_renderer.py:  470: printSegment: inverse psoriasis
+   DEBUG: 2023-11-27 14:16:35,758:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,759:      pdf_renderer.py:  470: printSegment:  is specified as one cause for armpit rashes, and there
+   DEBUG: 2023-11-27 14:16:35,759:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,760:      pdf_renderer.py:  470: printSegment: s a relevant page on psoriasis that
+   DEBUG: 2023-11-27 14:16:35,760:      pdf_renderer.py:  470: printSegment: provides additional information.
+   DEBUG: 2023-11-27 14:16:35,760:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,761:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,761:      pdf_renderer.py:  470: printSegment: -Unlike traditional psoriasis, inverse psoriasis is exclusive to
+   DEBUG: 2023-11-27 14:16:35,761:      pdf_renderer.py:  470: printSegment: skin folds
+   DEBUG: 2023-11-27 14:16:35,762:      pdf_renderer.py:  470: printSegment: +Unlike traditional psoriasis, <a
+   DEBUG: 2023-11-27 14:16:35,762:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/psoriasis/'>inverse
+   DEBUG: 2023-11-27 14:16:35,762:      pdf_renderer.py:  470: printSegment: psoriasis</a> is exclusive to skin folds
+   DEBUG: 2023-11-27 14:16:35,763:      pdf_renderer.py:  470: printSegment: Link to legal term
+   DEBUG: 2023-11-27 14:16:35,763:      pdf_renderer.py:  470: printSegment: Hidradenitis Supertiva, discussed as a cause for armpit rashes, aligns with the condition covered on the site
+   DEBUG: 2023-11-27 14:16:35,764:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,764:      pdf_renderer.py:  470: printSegment: s
+   DEBUG: 2023-11-27 14:16:35,765:      pdf_renderer.py:  470: printSegment: dedicated page.
+   DEBUG: 2023-11-27 14:16:35,765:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,765:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,765:      pdf_renderer.py:  470: printSegment: -Also called Hidradenitis supertiva, it’s
+   DEBUG: 2023-11-27 14:16:35,769:      pdf_renderer.py:  470: printSegment: +Also called <a
+   DEBUG: 2023-11-27 14:16:35,769:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/hidradenitis-suppurativa/'>Hidradenitis supertiva</a>, it’s
+   DEBUG: 2023-11-27 14:16:35,770:      pdf_renderer.py:  470: printSegment: Page category
+   DEBUG: 2023-11-27 14:16:35,770:      pdf_renderer.py:  470: printSegment: __
+   DEBUG: 2023-11-27 14:16:35,770:      pdf_renderer.py:  470: printSegment: alopecia
+   DEBUG: 2023-11-27 14:16:35,770:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,771:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,771:      pdf_renderer.py:  470: printSegment: The article 
+   DEBUG: 2023-11-27 14:16:35,771:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,771:      pdf_renderer.py:  470: printSegment: DermaRollers: For Hair Loss Treatment
+   DEBUG: 2023-11-27 14:16:35,772:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,772:      pdf_renderer.py:  470: printSegment:  features relevant content about innovative hair loss treatments
+   DEBUG: 2023-11-27 14:16:35,772:      pdf_renderer.py:  470: printSegment: that directly relate to Alopecia, the main topic of the category page.
+   DEBUG: 2023-11-27 14:16:35,772:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,773:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,773:      pdf_renderer.py:  470: printSegment: -The article 'DermaRollers: For Hair Loss Treatment' explores the
+   DEBUG: 2023-11-27 14:16:35,773:      pdf_renderer.py:  470: printSegment: use of DermaRollers as an innovative treatment for hair loss.
+   DEBUG: 2023-11-27 14:16:35,774:      pdf_renderer.py:  470: printSegment: +The article <a
+   DEBUG: 2023-11-27 14:16:35,774:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/dermarollers-for-hair-loss-treatment/'>DermaRollers: For Hair Loss Treatment</a> explores the use of DermaRollers as an innovative treatment for hair loss.
+   DEBUG: 2023-11-27 14:16:35,775:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,775:      pdf_renderer.py:  470: printSegment: The article 
+   DEBUG: 2023-11-27 14:16:35,775:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,775:      pdf_renderer.py:  470: printSegment: Sugary Drinks and Male Pattern Hair Loss
+   DEBUG: 2023-11-27 14:16:35,776:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,776:      pdf_renderer.py:  470: printSegment:  on SullivanDermatology provides insights into factors that
+   DEBUG: 2023-11-27 14:16:35,776:      pdf_renderer.py:  470: printSegment: can affect hair loss, relevant to readers interested in Alopecia.
+   DEBUG: 2023-11-27 14:16:35,776:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,777:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,777:      pdf_renderer.py:  470: printSegment: -Recent research suggests that sugary drinks might be a
+   DEBUG: 2023-11-27 14:16:35,777:      pdf_renderer.py:  470: printSegment: contributing factor to male pattern hair loss.
+   DEBUG: 2023-11-27 14:16:35,778:      pdf_renderer.py:  470: printSegment: +Recent research suggests that <a
+   DEBUG: 2023-11-27 14:16:35,778:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/sugary-drinks-and-male-pattern-hair-loss/'>sugary drinks might be a contributing factor to male pattern hair loss</a>.
+   DEBUG: 2023-11-27 14:16:35,778:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,778:      pdf_renderer.py:  470: printSegment: The article 
+   DEBUG: 2023-11-27 14:16:35,779:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,779:      pdf_renderer.py:  470: printSegment: How Much Hair Loss Is 
+   DEBUG: 2023-11-27 14:16:35,779:      pdf_renderer.py:  470: printSegment: "
+   DEBUG: 2023-11-27 14:16:35,779:      pdf_renderer.py:  470: printSegment: Normal
+   DEBUG: 2023-11-27 14:16:35,780:      pdf_renderer.py:  470: printSegment: "
+   DEBUG: 2023-11-27 14:16:35,780:      pdf_renderer.py:  470: printSegment:  in the Shower?
+   DEBUG: 2023-11-27 14:16:35,780:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,780:      pdf_renderer.py:  470: printSegment:  offers contextually relevant information, enhancing
+   DEBUG: 2023-11-27 14:16:35,780:      pdf_renderer.py:  470: printSegment: reader understanding within the Alopecia category.
+   DEBUG: 2023-11-27 14:16:35,781:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,781:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,782:      pdf_renderer.py:  470: printSegment: -Wondering how much hair loss is considered normal during a shower?
+   DEBUG: 2023-11-27 14:16:35,782:      pdf_renderer.py:  470: printSegment: +Wondering <a
+   DEBUG: 2023-11-27 14:16:35,782:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/how-much-hair-loss-is-normal-in-the-shower/'>how much hair loss is considered normal during a shower</a>?
+   DEBUG: 2023-11-27 14:16:35,783:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,783:      pdf_renderer.py:  470: printSegment: The article 
+   DEBUG: 2023-11-27 14:16:35,783:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,783:      pdf_renderer.py:  470: printSegment: Revolutionizing Hair Loss Treatments.
+   DEBUG: 2023-11-27 14:16:35,783:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,784:      pdf_renderer.py:  470: printSegment:  should be linked as it discusses hair loss treatments, which is
+   DEBUG: 2023-11-27 14:16:35,784:      pdf_renderer.py:  470: printSegment: clearly related to the Alopecia category.
+   DEBUG: 2023-11-27 14:16:35,784:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,784:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,785:      pdf_renderer.py:  470: printSegment: -Learn about new methods and treatments that are revolutionizing
+   DEBUG: 2023-11-27 14:16:35,785:      pdf_renderer.py:  470: printSegment: the way we approach hair loss.
+   DEBUG: 2023-11-27 14:16:35,786:      pdf_renderer.py:  470: printSegment: +Learn about new methods and treatments that are <a
+   DEBUG: 2023-11-27 14:16:35,786:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/revolutionizing-hair-loss-treatments/'>revolutionizing the way we approach hair loss</a>.
+   DEBUG: 2023-11-27 14:16:35,787:      pdf_renderer.py:  470: printSegment: Page breaking-ground-in-atopic-dermatitis-care
+   DEBUG: 2023-11-27 14:16:35,787:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,788:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,789:      pdf_renderer.py:  470: printSegment: The page content discusses atopic dermatitis care and mentions the specific term 
+   DEBUG: 2023-11-27 14:16:35,789:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,789:      pdf_renderer.py:  470: printSegment: eczema
+   DEBUG: 2023-11-27 14:16:35,790:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,790:      pdf_renderer.py:  470: printSegment: ; linking to the existing
+   DEBUG: 2023-11-27 14:16:35,790:      pdf_renderer.py:  470: printSegment: article provides further information on the topic.
+   DEBUG: 2023-11-27 14:16:35,790:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,791:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,791:      pdf_renderer.py:  470: printSegment: -Atopic dermatitis, more commonly known as eczema,
+   DEBUG: 2023-11-27 14:16:35,791:      pdf_renderer.py:  470: printSegment: +Atopic dermatitis, more commonly known as <a
+   DEBUG: 2023-11-27 14:16:35,791:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/atopic-dermatitis-eczema/'>eczema</a>,
+   DEBUG: 2023-11-27 14:16:35,792:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,792:      pdf_renderer.py:  470: printSegment: The mention of new treatment methods could be complemented with a direct link to a specific treatment-focused
+   DEBUG: 2023-11-27 14:16:35,792:      pdf_renderer.py:  470: printSegment: article, such as 
+   DEBUG: 2023-11-27 14:16:35,793:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,793:      pdf_renderer.py:  470: printSegment: Pioneering Psoriasis Treatments.
+   DEBUG: 2023-11-27 14:16:35,793:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,794:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,794:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,794:      pdf_renderer.py:  470: printSegment: -recent advances are providing new hope for sufferers.
+   DEBUG: 2023-11-27 14:16:35,795:      pdf_renderer.py:  470: printSegment: +recent advances are providing new hope for sufferers. Learn more
+   DEBUG: 2023-11-27 14:16:35,795:      pdf_renderer.py:  470: printSegment: in our article about <a
+   DEBUG: 2023-11-27 14:16:35,795:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/pioneering-psoriasis-treatments/'>Pioneering Psoriasis Treatments</a>.
+   DEBUG: 2023-11-27 14:16:35,796:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,796:      pdf_renderer.py:  470: printSegment: The content mentions the topic of scheduling a consultation, which is related to the 
+   DEBUG: 2023-11-27 14:16:35,796:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,797:      pdf_renderer.py:  470: printSegment: Contact
+   DEBUG: 2023-11-27 14:16:35,797:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,797:      pdf_renderer.py:  470: printSegment:  main page providing
+   DEBUG: 2023-11-27 14:16:35,797:      pdf_renderer.py:  470: printSegment: location and contact details for appointments.
+   DEBUG: 2023-11-27 14:16:35,798:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,798:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,798:      pdf_renderer.py:  470: printSegment: -we invite you to book a consultation with Dr. Sullivan
+   DEBUG: 2023-11-27 14:16:35,798:      pdf_renderer.py:  470: printSegment: +we invite you to <a
+   DEBUG: 2023-11-27 14:16:35,799:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/contact/'>book a
+   DEBUG: 2023-11-27 14:16:35,799:      pdf_renderer.py:  470: printSegment: consultation</a> with Dr. Sullivan
+   DEBUG: 2023-11-27 14:16:35,799:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,799:      pdf_renderer.py:  470: printSegment: The content briefly addresses the general concept of managing chronic conditions in dermatology, which is more
+   DEBUG: 2023-11-27 14:16:35,800:      pdf_renderer.py:  470: printSegment: comprehensively covered in the 
+   DEBUG: 2023-11-27 14:16:35,800:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,800:      pdf_renderer.py:  470: printSegment: General Derm
+   DEBUG: 2023-11-27 14:16:35,800:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,801:      pdf_renderer.py:  470: printSegment:  main page.
+   DEBUG: 2023-11-27 14:16:35,801:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,801:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,801:      pdf_renderer.py:  470: printSegment: -helps to manage this chronic condition
+   DEBUG: 2023-11-27 14:16:35,802:      pdf_renderer.py:  470: printSegment: +helps to manage this <a
+   DEBUG: 2023-11-27 14:16:35,802:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/general-derm/'>chronic
+   DEBUG: 2023-11-27 14:16:35,802:      pdf_renderer.py:  470: printSegment: condition</a>
+   DEBUG: 2023-11-27 14:16:35,802:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,803:      pdf_renderer.py:  470: printSegment: The text discusses 
+   DEBUG: 2023-11-27 14:16:35,803:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,804:      pdf_renderer.py:  470: printSegment: topical creams
+   DEBUG: 2023-11-27 14:16:35,804:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,804:      pdf_renderer.py:  470: printSegment: , and there is a related article on the site that can provide more in-depth
+   DEBUG: 2023-11-27 14:16:35,805:      pdf_renderer.py:  470: printSegment: information on 
+   DEBUG: 2023-11-27 14:16:35,805:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,805:      pdf_renderer.py:  470: printSegment: Gentle Care Products
+   DEBUG: 2023-11-27 14:16:35,806:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,806:      pdf_renderer.py:  470: printSegment: .
+   DEBUG: 2023-11-27 14:16:35,806:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,806:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,807:      pdf_renderer.py:  470: printSegment: -traditionally been treated with topical creams
+   DEBUG: 2023-11-27 14:16:35,807:      pdf_renderer.py:  470: printSegment: +traditionally been treated with <a
+   DEBUG: 2023-11-27 14:16:35,808:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/gentle-care-products/'>topical creams</a>
+   DEBUG: 2023-11-27 14:16:35,808:      pdf_renderer.py:  470: printSegment: Page category
+   DEBUG: 2023-11-27 14:16:35,809:      pdf_renderer.py:  470: printSegment: __
+   DEBUG: 2023-11-27 14:16:35,809:      pdf_renderer.py:  470: printSegment: neuromodulators
+   DEBUG: 2023-11-27 14:16:35,809:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,810:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,810:      pdf_renderer.py:  470: printSegment: The term 
+   DEBUG: 2023-11-27 14:16:35,810:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,811:      pdf_renderer.py:  470: printSegment: general dermatology care
+   DEBUG: 2023-11-27 14:16:35,811:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,811:      pdf_renderer.py:  470: printSegment:  is referenced and there exists a relevant page on General Dermatology that can
+   DEBUG: 2023-11-27 14:16:35,812:      pdf_renderer.py:  470: printSegment: provide readers with additional information.
+   DEBUG: 2023-11-27 14:16:35,812:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,812:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,813:      pdf_renderer.py:  470: printSegment: -At SullivanDermatology, we provide comprehensive general
+   DEBUG: 2023-11-27 14:16:35,813:      pdf_renderer.py:  470: printSegment: dermatology care to address all your skin concerns.
+   DEBUG: 2023-11-27 14:16:35,813:      pdf_renderer.py:  470: printSegment: +At SullivanDermatology, we provide comprehensive <a
+   DEBUG: 2023-11-27 14:16:35,813:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/general-derm/'>general
+   DEBUG: 2023-11-27 14:16:35,814:      pdf_renderer.py:  470: printSegment: dermatology care</a> to address all your skin concerns.
+   DEBUG: 2023-11-27 14:16:35,814:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,814:      pdf_renderer.py:  470: printSegment: There
+   DEBUG: 2023-11-27 14:16:35,815:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,815:      pdf_renderer.py:  470: printSegment: s a specific mention of dermatitis as one of the causes for armpit rashes, and the site has a dedicated page on
+   DEBUG: 2023-11-27 14:16:35,815:      pdf_renderer.py:  470: printSegment: the topic which can provide the reader with more details.
+   DEBUG: 2023-11-27 14:16:35,815:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,816:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,816:      pdf_renderer.py:  470: printSegment: -Broadly speaking, dermatitis is skin irritation. There are various
+   DEBUG: 2023-11-27 14:16:35,816:      pdf_renderer.py:  470: printSegment: types, but in the context of armpits, atopic and seborrheic
+   DEBUG: 2023-11-27 14:16:35,816:      pdf_renderer.py:  470: printSegment: dermatitis are relatively rare.
+   DEBUG: 2023-11-27 14:16:35,817:      pdf_renderer.py:  470: printSegment: +Broadly speaking, <a
+   DEBUG: 2023-11-27 14:16:35,817:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/dermatitis/'>dermatitis</a>
+   DEBUG: 2023-11-27 14:16:35,817:      pdf_renderer.py:  470: printSegment: is skin irritation. There are various types, but in the context of
+   DEBUG: 2023-11-27 14:16:35,818:      pdf_renderer.py:  470: printSegment: armpits, atopic and seborrheic dermatitis are relatively rare.
+   DEBUG: 2023-11-27 14:16:35,818:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,818:      pdf_renderer.py:  470: printSegment: The term 
+   DEBUG: 2023-11-27 14:16:35,819:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,819:      pdf_renderer.py:  470: printSegment: atopic
+   DEBUG: 2023-11-27 14:16:35,819:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,820:      pdf_renderer.py:  470: printSegment:  is used, and there is a term-specific page that provides additional reading material for interested
+   DEBUG: 2023-11-27 14:16:35,820:      pdf_renderer.py:  470: printSegment: readers.
+   DEBUG: 2023-11-27 14:16:35,820:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,820:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,821:      pdf_renderer.py:  470: printSegment: -Broadly speaking, dermatitis is skin irritation. There are various
+   DEBUG: 2023-11-27 14:16:35,821:      pdf_renderer.py:  470: printSegment: types, but in the context of armpits, atopic and seborrheic
+   DEBUG: 2023-11-27 14:16:35,821:      pdf_renderer.py:  470: printSegment: dermatitis are relatively rare.
+   DEBUG: 2023-11-27 14:16:35,822:      pdf_renderer.py:  470: printSegment: +Broadly speaking, dermatitis is skin irritation. There are various
+   DEBUG: 2023-11-27 14:16:35,822:      pdf_renderer.py:  470: printSegment: types, but in the context of armpits, <a
+   DEBUG: 2023-11-27 14:16:35,822:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/atopic-dermatitis-eczema/'>atopic</a> and seborrheic dermatitis are relatively rare.
+   DEBUG: 2023-11-27 14:16:35,823:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,823:      pdf_renderer.py:  470: printSegment: Ringworm is mentioned as a cause of armpit rash and there is an article that explains more about fungal infections
+   DEBUG: 2023-11-27 14:16:35,823:      pdf_renderer.py:  470: printSegment: which includes ringworm.
+   DEBUG: 2023-11-27 14:16:35,823:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,824:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,824:      pdf_renderer.py:  470: printSegment: -Despite its name, it&#8217;s a fungal infection, notorious for its
+   DEBUG: 2023-11-27 14:16:35,825:      pdf_renderer.py:  470: printSegment: distinctive ring-like appearance.
+   DEBUG: 2023-11-27 14:16:35,826:      pdf_renderer.py:  470: printSegment: +Despite its name, it&#8217;s a <a
+   DEBUG: 2023-11-27 14:16:35,826:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/fungal-infections/'>fungal
+   DEBUG: 2023-11-27 14:16:35,826:      pdf_renderer.py:  470: printSegment: infection</a>, notorious for its distinctive ring-like appearance.
+   DEBUG: 2023-11-27 14:16:35,827:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,828:      pdf_renderer.py:  470: printSegment: The term 
+   DEBUG: 2023-11-27 14:16:35,829:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,829:      pdf_renderer.py:  470: printSegment: Hidradenitis supertiva
+   DEBUG: 2023-11-27 14:16:35,829:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,829:      pdf_renderer.py:  470: printSegment:  is referenced, and a corresponding dedicated page is available for more
+   DEBUG: 2023-11-27 14:16:35,829:      pdf_renderer.py:  470: printSegment: information.
+   DEBUG: 2023-11-27 14:16:35,830:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,830:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,830:      pdf_renderer.py:  470: printSegment: -Also called <a
+   DEBUG: 2023-11-27 14:16:35,831:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/hidradenitis-suppurativa/'>Hidradenitis supertiva</a>, it&#8217;s an inflammatory disorder affecting hair follicles in skin folds.
+   DEBUG: 2023-11-27 14:16:35,831:      pdf_renderer.py:  470: printSegment: +Also called <a
+   DEBUG: 2023-11-27 14:16:35,831:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/hidradenitis-suppurativa/'>Hidradenitis supertiva</a>, it&#8217;s an inflammatory disorder affecting hair follicles in skin folds.
+   DEBUG: 2023-11-27 14:16:35,832:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,832:      pdf_renderer.py:  470: printSegment: Psoriasis is mentioned as a cause for armpit rashes, and there exists a relevant page that can provide readers with
+   DEBUG: 2023-11-27 14:16:35,832:      pdf_renderer.py:  470: printSegment: additional information on the condition.
+   DEBUG: 2023-11-27 14:16:35,832:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,833:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,833:      pdf_renderer.py:  470: printSegment: -Unlike traditional psoriasis, inverse psoriasis is exclusive to
+   DEBUG: 2023-11-27 14:16:35,833:      pdf_renderer.py:  470: printSegment: skin folds and lacks the flaky appearance, often presenting as red
+   DEBUG: 2023-11-27 14:16:35,834:      pdf_renderer.py:  470: printSegment: patches.
+   DEBUG: 2023-11-27 14:16:35,834:      pdf_renderer.py:  470: printSegment: +Unlike traditional psoriasis, <a
+   DEBUG: 2023-11-27 14:16:35,834:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/psoriasis/'>inverse
+   DEBUG: 2023-11-27 14:16:35,835:      pdf_renderer.py:  470: printSegment: psoriasis</a> is exclusive to skin folds and lacks the flaky
+   DEBUG: 2023-11-27 14:16:35,835:      pdf_renderer.py:  470: printSegment: appearance, often presenting as red patches.
+   DEBUG: 2023-11-27 14:16:35,835:      pdf_renderer.py:  470: printSegment: Page morpheus8-reshaping-the-landscape-of-skin-rejuvenation
+   DEBUG: 2023-11-27 14:16:35,835:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,836:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,836:      pdf_renderer.py:  470: printSegment: The phrase 
+   DEBUG: 2023-11-27 14:16:35,837:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,837:      pdf_renderer.py:  470: printSegment: skin concerns
+   DEBUG: 2023-11-27 14:16:35,837:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,837:      pdf_renderer.py:  470: printSegment:  could be expanded with a link to an article that might elaborate on common skin concerns
+   DEBUG: 2023-11-27 14:16:35,837:      pdf_renderer.py:  470: printSegment: such as 
+   DEBUG: 2023-11-27 14:16:35,838:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,838:      pdf_renderer.py:  470: printSegment: The balanced power of omega-3 fatty acids: Health skin and modern challenges
+   DEBUG: 2023-11-27 14:16:35,838:      pdf_renderer.py:  470: printSegment: '
+   DEBUG: 2023-11-27 14:16:35,839:      pdf_renderer.py:  470: printSegment: .
+   DEBUG: 2023-11-27 14:16:35,839:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,839:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,839:      pdf_renderer.py:  470: printSegment: -At SullivanDermatology, Dr. Sullivan is committed to providing
+   DEBUG: 2023-11-27 14:16:35,840:      pdf_renderer.py:  470: printSegment: innovative solutions to these issues, one of which is the
+   DEBUG: 2023-11-27 14:16:35,840:      pdf_renderer.py:  470: printSegment: revolutionary Morpheus8 treatment.
+   DEBUG: 2023-11-27 14:16:35,840:      pdf_renderer.py:  470: printSegment: +At SullivanDermatology, Dr. Sullivan is committed to providing
+   DEBUG: 2023-11-27 14:16:35,841:      pdf_renderer.py:  470: printSegment: innovative solutions to these <a
+   DEBUG: 2023-11-27 14:16:35,841:      pdf_renderer.py:  470: printSegment: href="https://sullivandermatology.com/the-balanced-power-of-omega-3-fatty-acids-health-skin-and-modern-challenges/">issues</a>, one of which is the revolutionary Morpheus8 treatment.
+   DEBUG: 2023-11-27 14:16:35,841:      pdf_renderer.py:  470: printSegment: Page rejuvenating-aging-hands-the-magic-of-fillers
+   DEBUG: 2023-11-27 14:16:35,842:      pdf_renderer.py:  470: printSegment: List of suggestions:
+   DEBUG: 2023-11-27 14:16:35,842:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,843:      pdf_renderer.py:  470: printSegment: The page discusses the aging of hands and the use of dermal fillers as a treatment, which relates to the general topic
+   DEBUG: 2023-11-27 14:16:35,843:      pdf_renderer.py:  470: printSegment: of hand rejuvenation covered in other articles.
+   DEBUG: 2023-11-27 14:16:35,843:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,844:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,844:      pdf_renderer.py:  470: printSegment: -hands can significantly reveal signs of aging due to volume loss
+   DEBUG: 2023-11-27 14:16:35,845:      pdf_renderer.py:  470: printSegment: and skin thinning.
+   DEBUG: 2023-11-27 14:16:35,845:      pdf_renderer.py:  470: printSegment: +hands can significantly reveal signs of aging due to volume loss
+   DEBUG: 2023-11-27 14:16:35,845:      pdf_renderer.py:  470: printSegment: and skin thinning. Discover more about this in our <a
+   DEBUG: 2023-11-27 14:16:35,845:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/category/hand-rejuvenation/'>hand rejuvenation section</a>.
+   DEBUG: 2023-11-27 14:16:35,846:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,846:      pdf_renderer.py:  470: printSegment: Dermal fillers such as Juvederm and Restylane are mentioned, and information on their specific properties and
+   DEBUG: 2023-11-27 14:16:35,847:      pdf_renderer.py:  470: printSegment: benefits could be obtained from existing articles.
+   DEBUG: 2023-11-27 14:16:35,847:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,847:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,847:      pdf_renderer.py:  470: printSegment: -Hyaluronic acid fillers, like Juvederm and Restylane
+   DEBUG: 2023-11-27 14:16:35,848:      pdf_renderer.py:  470: printSegment: +Hyaluronic acid fillers, like <a
+   DEBUG: 2023-11-27 14:16:35,848:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/juvederm-ultra-plus-xc/'>Juvederm</a> and <a href='https://sullivandermatology.com/restylane-kysse/'>Restylane</a>
+   DEBUG: 2023-11-27 14:16:35,848:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,849:      pdf_renderer.py:  470: printSegment: Radiesse is mentioned as a treatment option which provides volume and stimulates collagen production; linking to
+   DEBUG: 2023-11-27 14:16:35,849:      pdf_renderer.py:  470: printSegment: the page would give the reader additional context about the product.
+   DEBUG: 2023-11-27 14:16:35,849:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,849:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,850:      pdf_renderer.py:  470: printSegment: -Another option is Radiesse
+   DEBUG: 2023-11-27 14:16:35,850:      pdf_renderer.py:  470: printSegment: +Another option is <a
+   DEBUG: 2023-11-27 14:16:35,850:      pdf_renderer.py:  470: printSegment: href='https://sullivandermatology.com/radiesse/'>Radiesse</a>
+   DEBUG: 2023-11-27 14:16:35,851:      pdf_renderer.py:  470: printSegment: Link to example page
+   DEBUG: 2023-11-27 14:16:35,851:      pdf_renderer.py:  470: printSegment: Sculptra is referenced as a treatment option for hand rejuvenation and there exists an example page that provides
+   DEBUG: 2023-11-27 14:16:35,851:      pdf_renderer.py:  470: printSegment: further insights into this specific treatment option.
+   DEBUG: 2023-11-27 14:16:35,851:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,852:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,852:      pdf_renderer.py:  470: printSegment: -Sculptra, a poly-L-lactic acid-based filler
+   DEBUG: 2023-11-27 14:16:35,852:      pdf_renderer.py:  470: printSegment: +<a href='https://sullivandermatology.com/sculptra/'>Sculptra</a>,
+   DEBUG: 2023-11-27 14:16:35,853:      pdf_renderer.py:  470: printSegment: a poly-L-lactic acid-based filler
+   DEBUG: 2023-11-27 14:16:35,853:      pdf_renderer.py:  470: printSegment: Link to existing article
+   DEBUG: 2023-11-27 14:16:35,853:      pdf_renderer.py:  470: printSegment: The final paragraph invites readers to contact the office for a consultation, which is directly related to the contact
+   DEBUG: 2023-11-27 14:16:35,854:      pdf_renderer.py:  470: printSegment: page.
+   DEBUG: 2023-11-27 14:16:35,854:      pdf_renderer.py:  470: printSegment:  
+   DEBUG: 2023-11-27 14:16:35,854:      pdf_renderer.py:  470: printSegment: Diff:
+   DEBUG: 2023-11-27 14:16:35,854:      pdf_renderer.py:  470: printSegment: -Reach out to the SullivanDermatology office today
+   DEBUG: 2023-11-27 14:16:35,855:      pdf_renderer.py:  470: printSegment: +<a href='https://sullivandermatology.com/contact/'>Reach out</a>
+   DEBUG: 2023-11-27 14:16:35,855:      pdf_renderer.py:  470: printSegment: to the SullivanDermatology office today
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 0, [1, 'Report', 1, 68.0]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 1, [2, 'Page category', 1, 106.0]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 2, [3, 'Link to existing article', 1, 157.20000000000002]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 3, [2, 'Page silhouette-thread-lift', 1, 288.40000000000003]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 4, [3, 'Link to existing article', 1, 339.6]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 5, [2, 'Page pay-bill', 1, 482.8]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 6, [3, 'Link to existing article', 1, 534.0]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 7, [3, 'Link to existing article', 1, 652.8]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 8, [3, 'Link to existing article', 2, 140.4]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 9, [3, 'Link to existing article', 2, 271.2]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 10, [3, 'Link to existing article', 2, 389.99999999999994]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 11, [2, 'Page molluscum-contagiosum', 2, 521.1999999999998]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 12, [3, 'Link to existing article', 2, 572.3999999999997]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 13, [3, 'Link to existing article', 3, 72.0]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 14, [3, 'Link to existing article', 3, 250.8]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 15, [3, 'Link to existing article', 3, 405.59999999999997]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 16, [2, 'Page armpit-rashes-10-causes', 3, 584.8]
+   DEBUG: 2023-11-27 14:16:35,856:      pdf_renderer.py:   53: 17, [3, 'Link to legal term', 3, 635.9999999999999]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 18, [3, 'Link to legal term', 4, 116.4]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 19, [3, 'Link to legal term', 4, 235.20000000000002]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 20, [3, 'Link to legal term', 4, 366.0]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 21, [3, 'Link to legal term', 4, 496.79999999999995]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 22, [3, 'Link to legal term', 4, 615.5999999999999]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 23, [3, 'Link to legal term', 5, 104.4]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 24, [2, 'Page category', 5, 223.60000000000002]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 25, [3, 'Link to existing article', 5, 274.8]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 26, [3, 'Link to existing article', 5, 405.59999999999997]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 27, [3, 'Link to existing article', 5, 536.4]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 28, [3, 'Link to existing article', 5, 655.1999999999999]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 29, [2, 'Page breaking-ground-in-atopic-dermatitis-care', 6, 140.8]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 30, [3, 'Link to existing article', 6, 192.00000000000003]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 31, [3, 'Link to existing article', 6, 310.8]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 32, [3, 'Link to existing article', 6, 441.59999999999997]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 33, [3, 'Link to existing article', 6, 560.4]
+   DEBUG: 2023-11-27 14:16:35,857:      pdf_renderer.py:   53: 34, [3, 'Link to existing article', 6, 679.1999999999999]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 35, [2, 'Page category', 7, 158.8]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 36, [3, 'Link to existing article', 7, 210.00000000000003]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 37, [3, 'Link to existing article', 7, 340.8]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 38, [3, 'Link to existing article', 7, 495.59999999999997]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 39, [3, 'Link to existing article', 7, 650.4]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 40, [3, 'Link to existing article', 8, 140.4]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 41, [3, 'Link to existing article', 8, 283.2]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 42, [2, 'Page morpheus8-reshaping-the-landscape-of-skin-rejuvenation', 8, 438.4]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 43, [3, 'Link to existing article', 8, 489.59999999999997]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 44, [2, 'Page rejuvenating-aging-hands-the-magic-of-fillers', 8, 644.8]
+   DEBUG: 2023-11-27 14:16:35,858:      pdf_renderer.py:   53: 45, [3, 'Link to existing article', 8, 695.9999999999999]
+   DEBUG: 2023-11-27 14:16:35,859:      pdf_renderer.py:   53: 46, [3, 'Link to existing article', 9, 200.4]
+   DEBUG: 2023-11-27 14:16:35,859:      pdf_renderer.py:   53: 47, [3, 'Link to existing article', 9, 319.2]
+   DEBUG: 2023-11-27 14:16:35,859:      pdf_renderer.py:   53: 48, [3, 'Link to example page', 9, 425.99999999999994]
+   DEBUG: 2023-11-27 14:16:35,859:      pdf_renderer.py:   53: 49, [3, 'Link to existing article', 9, 532.7999999999998]
