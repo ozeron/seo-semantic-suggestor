@@ -5,17 +5,21 @@ import xml.etree.ElementTree as ET
 import argparse
 from urllib.parse import urlparse
 import os
-from tqdm import tqdm
+from tqdm.asyncio import tqdm as async_tqdm
 import time
 import json
 from dotenv import load_dotenv
+import backoff
+from openai import AsyncOpenAI, RateLimitError
 
-from openai import AsyncOpenAI
+from aiolimiter import AsyncLimiter
+
+
 
 # Load environment variables from .env file
 load_dotenv()
 client = AsyncOpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-
+limiter = AsyncLimiter(5, 1)
 MODEL = "gpt-4-1106-preview"
 
 DATA_FOLDER = "data"
@@ -116,7 +120,7 @@ Example response:
   "suggestions": [{'action': 'Add internal link', 'reason': "The term 'breach of contract' is mentioned as an example of a cause of action, and a corresponding page on 'breach' exists in the sitemap.", 'from': 'if someone broke a contract with you, your cause of action would be breach of contract.', 'to': 'if someone broke a contract with you, your cause of action would be <a href="https://detangle.ai/legal-terms/breach">breach of contract</a>.'}]
 }
 """
-
+@backoff.on_exception(backoff.expo, RateLimitError)
 async def suggest_interlink_for_page(page, path):
     with open(f'{path}/{page}', 'r') as file:
         pagecontent = file.read()
@@ -142,17 +146,20 @@ async def suggest_interlink_for_page(page, path):
     dict_response = json.loads(json_response)
     return dict_response['suggestions']
 
-async def suggest_and_prepare_report(page, path):
+async def suggest_and_prepare_report(page, path, hostname):
     try:
-      suggestions = await suggest_interlink_for_page(page, path)
-      # print(suggestions)
-      list_of_suggestion = [f"### {suggestion['action']}\n{suggestion['reason']}\nDiff:\n```diff\n-{suggestion['from']}\n+{suggestion['to']}\n```\n" for suggestion in suggestions]
+        async with limiter:
+            suggestions = await suggest_interlink_for_page(page, path)
+            # print(suggestions)
+            list_of_suggestion = [f"### {suggestion['action']}\n{suggestion['reason']}\nDiff:\n```diff\n-{suggestion['from']}\n+{suggestion['to']}\n```\n" for suggestion in suggestions]
 
-      text = f"""
+            text = f"""
 ## Page {page}
 List of suggestions:
-""" + '\n\n'.join(list_of_suggestion)
-      return text
+        """ + '\n\n'.join(list_of_suggestion)
+            with open(f"out/{hostname}.md", 'a') as report_file:
+                report_file.write(text + '\n')
+            return text
     except Exception as e:
         print(f"Error: {e}")
         print(suggestions)
@@ -162,7 +169,7 @@ async def command_suggest(args):
     if args.page:
       print(f"Suggesting interlinking for {args.page}")
 
-    text = await suggest_and_prepare_report(args.page, '')
+    text = await suggest_and_prepare_report(args.page, '', '')
     data_folder = "out"
     if not os.path.exists(data_folder):
         os.makedirs(data_folder)
@@ -175,13 +182,16 @@ async def command_suggest_all(args):
     print("suggesting-all")
     hostname = urlparse(args.url).hostname
     sitemap_folder = os.path.join(DATA_FOLDER, hostname)
-    for file in tqdm(os.listdir(sitemap_folder)):
+    tasks = []
+    for file in os.listdir(sitemap_folder):
         if file == "sitemap.xml":
             continue
-        await suggest_interlink_for_page(file, sitemap_folder)
-        text = await suggest_and_prepare_report(file, sitemap_folder)
-        with open(f"out/{hostname}.md", 'a') as report_file:
-            report_file.write(text + '\n')
+        # await suggest_interlink_for_page(file, sitemap_folder)
+        task = suggest_and_prepare_report(file, sitemap_folder, hostname)
+        tasks.append(task)
+    for future in async_tqdm(asyncio.as_completed(tasks), total=len(tasks)):
+        result = await future
+
 
 
 def init_parser():
