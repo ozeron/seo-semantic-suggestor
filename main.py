@@ -13,7 +13,7 @@ import json
 from dotenv import load_dotenv
 import backoff
 from openai import AsyncOpenAI, RateLimitError
-
+from magic_linking.clean_md import clean_html_to_md
 from aiolimiter import AsyncLimiter
 
 # Load environment variables from .env file
@@ -104,6 +104,7 @@ def command_download(args):
     metadata = {}
     metadata['hostname'] = hostname
     metadata['urls'] = []
+    metadata['suggestions'] = {}
     xml_files = [f for f in os.listdir(sitemap_folder) if f.endswith(".xml")]
     for file in xml_files:
         with open(os.path.join(sitemap_folder, file), "r") as f:
@@ -160,9 +161,11 @@ async def suggest_interlink_for_page(page, path):
     with open(f'{path}/metadata.json', 'r') as file:
         sitemap = file.read()
 
+    cleaned_content = clean_html_to_md(pagecontent)
+
     content = f"""Here is page content and sitemap. Suggest what links I can add.
     page content:
-    {pagecontent}
+    {cleaned_content}
     sitemap:
     {sitemap}
     """

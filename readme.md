@@ -67,3 +67,4 @@ TODO:
 - [ ] RAG for sitemap?
 - [ ] remove dummy diffs
 - [ ] remove links to external site
+- [ ] optimize cost for big website, RAG??? or maybe page by page IDK
